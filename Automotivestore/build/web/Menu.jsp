@@ -9,7 +9,7 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="home">AUTOMOTIVE</a>
+                <a class="navbar-brand" href="home">Hieu's AUTOMOTIVE</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -18,7 +18,7 @@
                     <ul class="navbar-nav m-auto">
                         
                         <c:if test="${sessionScope.acc.isAdmin == 1}">
-                           <li <a class="nav-link" href="AccountManagerController">Manager Account</a>
+                            <a class="nav-link" href="AccountManagerController">Manager Account</a>
                         </li>
                         </c:if>
                         
@@ -33,6 +33,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-success" href="#">Hello ${sessionScope.acc.user}</a>
                             </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="logout">Logout</a>
+                        </li>
                         </c:if>   
                             
                         <c:if test="${sessionScope.acc == null}">
@@ -44,7 +47,7 @@
 
                     <form action="search" method="get" class="form-inline my-2 my-lg-0">
                         <div class="input-group input-group-sm">
-                            <input value="" name="txt" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
+                            <input value="${txtS}" name="txt" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-secondary btn-number">
                                     <i class="fa fa-search"></i>

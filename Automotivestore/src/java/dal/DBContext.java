@@ -10,8 +10,8 @@ public class DBContext {
         try {
             // Edit URL , username, password to authenticate with your MS SQL Server
             String url = "jdbc:sqlserver://localhost:1433;databaseName=wish";
-            String username = "huongnc";
-            String password = "abcd";
+            String username = "sa";
+            String password = "123";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection = DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException | SQLException ex) {
@@ -19,10 +19,10 @@ public class DBContext {
         }
     }
   
-//    public static void main(String[] args) {
-//        try {
-//            System.out.println(new DBContext().connection);
-//        } catch (Exception e) {
-//        }
-//    }
+    public static void main(String[] args) {
+        try {
+            System.out.println(new DBContext().connection);
+        } catch (Exception e) {
+        }
+    }
 }
